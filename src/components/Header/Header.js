@@ -69,7 +69,7 @@ export default function Header() {
                 letterSpacing: '1px',
               }}
             >
-              GFEBS L413E Financial Reporting
+              GFEBS L413E End-to-End User Process
             </h5>
           </div>
         </div>
@@ -92,7 +92,7 @@ export default function Header() {
             <Modal show={show} onHide={handleClose}>
               <Modal.Header variant='light' closeButton>
                 <Modal.Title className=''>
-                  <b>INDEX </b>| Financial Reporting
+                  <b>INDEX </b>| End-to-End User Process
                 </Modal.Title>
               </Modal.Header>
               <Modal.Body>
@@ -125,7 +125,7 @@ export default function Header() {
           fontSize: '27px',
         }}
       >
-        Financial Reporting
+       End-to-End User Process
       </span>
     </>
   );
