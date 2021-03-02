@@ -3,6 +3,8 @@ import { Slide } from "react-slideshow-image";
 import { AppContext } from "../../context/AppContext";
 import Quiz from "react-quiz-component";
 import { quiz } from "../Quiz/Quiz";
+import endtoend from "../../img/endtoend.jpg";
+import objectives from "../../img/objectives.png";
 import TermsComponent from "../TermsComponent/TermsComponent.js";
 
 function Slides() {
@@ -115,6 +117,7 @@ function Slides() {
                 <h3 className="slide-title">
                   Welcome to End-to-End User Process
                 </h3>
+                <br/>
                 <span>
                   In this module we will discuss an end-to-end overview of the
                   GFEBS financial reporting process. We will discuss how GFEBS
@@ -123,7 +126,7 @@ function Slides() {
                 </span>
               </div>
               <div className="col">
-                <img src="" alt="image"></img>
+                <img src={endtoend} alt="image"></img>
               </div>
             </div>
           </div>
@@ -140,7 +143,7 @@ function Slides() {
                 </ul>
               </div>
               <div className="col">
-                <img src="" alt="image"></img>
+                <img src={objectives} alt=""></img>
               </div>
             </div>
           </div>
