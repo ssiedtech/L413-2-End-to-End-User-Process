@@ -11,7 +11,9 @@ $primary-color:linear-gradient(90deg, rgb(11, 49, 58) 0%, rgb(11, 49, 58) 100%);
 $tertiary-color: #009bd1;
 $main-font: 'Poppins', sans-serif;
 
-
+.slide-image{
+  height: 100px;
+}
 
 .slide-title,
 .react-quiz-container h2 {

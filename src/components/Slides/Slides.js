@@ -6,6 +6,12 @@ import { quiz } from "../Quiz/Quiz";
 import endtoend from "../../img/endtoend.jpg";
 import objectives from "../../img/objectives.png";
 import TermsComponent from "../TermsComponent/TermsComponent.js";
+import RFD1 from "../../img/RecordFinancialData.jpg";
+import RFD2 from "../../img/RFD 2.jpg";
+import RFD3 from "../../img/RFD 2.jpg";
+import RFD4 from "../../img/RFD 2.jpg";
+import Checkpoint from "../../img/module_checkpoint.png";
+import Shield from "../../img/shield.png";
 
 function Slides() {
   // State management
@@ -117,7 +123,7 @@ function Slides() {
                 <h3 className="slide-title">
                   Welcome to End-to-End User Process
                 </h3>
-                <br/>
+                <br />
                 <span>
                   In this module we will discuss an end-to-end overview of the
                   GFEBS financial reporting process. We will discuss how GFEBS
@@ -130,7 +136,6 @@ function Slides() {
               </div>
             </div>
           </div>
-
           <div className="slide">
             <div className="row p-3 m-1">
               <div className="col-6">
@@ -147,7 +152,6 @@ function Slides() {
               </div>
             </div>
           </div>
-
           <div className="row p-3 m-1">
             <div className="col">
               <div className="slide">
@@ -156,7 +160,6 @@ function Slides() {
               </div>
             </div>
           </div>
-
           <div className="slide">
             <div className="row p-3 m-1">
               <div className="col">
@@ -171,8 +174,8 @@ function Slides() {
                     accounting entries.
                   </p>
                 </div>
-                <div className="col">
-                  <img src="" alt="image"></img>
+                <div>
+                  <img className="slide-image" src={RFD1} alt="image"></img>
                 </div>
               </div>
             </div>
@@ -389,7 +392,6 @@ function Slides() {
               </div>
             </div>
           </div>
-
           <div className="slide">
             <div className="row p-3 m-1">
               <div className="col">
@@ -413,8 +415,33 @@ function Slides() {
                 </div>
               </div>
               <div className="col">
-              <img src="" alt="image"></img>
+                <img src="" alt="image"></img>
               </div>
+            </div>
+          </div>
+          <div className="slide">
+            <div className="row p-3 m-1">
+              <div className="col">
+                <div>
+                  <h3 className="slide-title">
+                    Consume Financial Data (Internal) 2 of 2
+                  </h3>
+                  <br />
+                  <p>
+                    Data is made available for BI financial reporting to persons
+                    with the Financial Reporter role. The Financial Reporter
+                    role provides access to SFIS reporting on both summary and
+                    detail levels. Below is a partial list of financial reports
+                    available:
+                  </p>
+                  <ul>
+                    <li>Consolidated Trial Balance</li>
+                    <li>Consolidated Reconciliation and Analysis</li>
+                    <li>SFIS Summary Analysis</li>
+                  </ul>
+                </div>
+              </div>
+              <div className="col">IMAGE</div>
             </div>
           </div>
 
@@ -422,47 +449,112 @@ function Slides() {
             <div className="row p-3 m-1">
               <div className="col">
                 <div>
-                  <h3 className="slide-title">Consume Financial Data (Internal) 2 of 2</h3>
-                  <p>text</p>
-                </div>
-              </div>
-              <div className="col">IMAGE</div>
-            </div>
-          </div>
-          
-          <div className="slide">
-            <div className="row p-3 m-1">
-              <div className="col">
-                <div>
-                  <h3 className="slide-title">Consume Financial Data (External) 1 of 2</h3>
-                  <p>text</p>
-                </div>
-              </div>
-              <div className="col">IMAGE</div>
-            </div>
-          </div>
-
-          <div className="slide">
-            <div className="row p-3 m-1">
-              <div className="col">
-                <div>
-                  <h3 className="slide-title">Consume Financial Data (External) 2 of 2</h3>
-                  <p>text</p>
+                  <h3 className="slide-title">
+                    Consume Financial Data (External) 1 of 2
+                  </h3>
+                  <br />
+                  <p>
+                    GFEBS uses data stored in GFEBS BI to provide financial data
+                    to external parties. This section discusses two processes
+                    where GFEBS sends its financial data to external systems:
+                  </p>
+                  <ul>
+                    <li>To DDRS</li>
+                    <li>To ACL</li>
+                  </ul>
                 </div>
               </div>
               <div className="col">IMAGE</div>
             </div>
           </div>
 
+          <div className="slide">
+            <div className="row p-3 m-1">
+              <div className="col">
+                <div>
+                  <h3 className="slide-title">
+                    Consume Financial Data (External) 2 of 2
+                  </h3>
+                  <h4>To DDRS:</h4>
+                  <ul>
+                    <li>
+                      The personnel responsible for sending GFEBS’ financial
+                      data to DDRS initiate the process by executing a custom
+                      transaction manually in GFEBS BI.
+                    </li>
+                    <li>
+                      This custom transaction (GFEBS transaction code
+                      ZFI_DDRS_BI) is not the typical GFEBS BI report and has no
+                      relation to a GFEBS BI report although the transaction was
+                      created in GFEBS BI.
+                    </li>
+                  </ul>
+                  <p>
+                    This custom transaction in GFEBS BI starts a series of other
+                    custom programs in GFEBS ECC which perform the following 2
+                    tasks:
+                  </p>
+                  <ul>
+                    <li>
+                      Gather relevant GFEBS financial data from GFEBS ECC tables
+                      (primarily the SFIS totals table).
+                    </li>
+                    <li>
+                      Aggregate or summarize the gathered data along the SFIS
+                      related fields in accordance with the SFIS requirements
+                      for reporting.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div className="col">
+                <h4>To ACL:</h4>
+                <ul>
+                  <li>
+                    Army Audit Readiness (DASA-FOA) requires GFEBS to send
+                    financial data to the ACL system. Periodically, the GFEBS
+                    Audit Support Team extracts financial data from GFEBS BI
+                    using extraction methods and custom programs directly at the
+                    database level. The team applies various custom logic
+                    supplied by DASA-FOA to relate the data before the team
+                    sends the data to ACL.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
           <div className="slide">
             <div className="row p-3 m-1">
               <div className="col">
                 <div>
                   <h3 className="slide-title">Lesson Checkpoint</h3>
-                  <p>text</p>
+                  <p>
+                    The following exercise consists of 4 questions to test your
+                    comprehension of the previous information presented.
+                  </p>
                 </div>
               </div>
-              <div className="col">IMAGE</div>
+              <div className="col">
+                <img src={Checkpoint}/>
+              </div>
+            </div>
+          </div>
+
+          <div className="slide">
+            <div className="row p-1 m-1">
+              <div className="col">
+                <div>
+                  <h3 className="slide-title">Quiz</h3>
+                  <Quiz
+                    quiz={quiz}
+                    key={key}
+                    continueTillCorrect={true}
+                    showDefaultResult={false}
+                    onComplete={onCompleteAction}
+                    customResultPage={renderCustomResultPage}
+                  />
+                </div>
+              </div>
             </div>
           </div>
 
@@ -471,22 +563,21 @@ function Slides() {
               <div className="col">
                 <div>
                   <h3 className="slide-title">Summary</h3>
-                  <p>text</p>
+                  <p>
+                    This concludes the End-to-End User Process module. In this
+                    module, we covered what systems interface with GFEBS, how
+                    data is recorded, when the data is reconciled, and the role
+                    ECC & BI plays in the process.
+                  </p>
+                  <p>You now should be able to:</p>
+                  <ul>
+                    <li>Describe the recording financial data process</li>
+                    <li>Explain how to reconcile financial data</li>
+                    <li>Identify how financial data is consumed</li>
+                  </ul>
                 </div>
               </div>
-              <div className="col">IMAGE</div>
-            </div>
-          </div>
-
-          <div className="slide">
-            <div className="row p-3 m-1">
-              <div className="col">
-                <div>
-                  <h3 className="slide-title">title</h3>
-                  <p>text</p>
-                </div>
-              </div>
-              <div className="col">IMAGE</div>
+              <div className="col"><img src={Shield}/></div>
             </div>
           </div>
         </Slide>

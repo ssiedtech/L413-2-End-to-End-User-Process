@@ -1,58 +1,52 @@
 export const quiz = {
   quizTitle: 'Check on Learning',
   questions: [
+  
     {
       question:
-        'The purpose of financial statements is to hold Government agencies accountable for their financial activities.',
+        "What structure accounts for data that provides common categorization?",
+      answers: [
+        'Defense Departmental Reporting System',
+        'Defense Cash Accountability System',
+        'Standard Financial Information Structure',
+        'ERP Central Component',
+      ],
+      questionType: 'text',
+      correctAnswer: '3',
+    },
+    {
+      question:
+        'GFEBS accumulates data from different sources, external systems and introduce new GL/SFIS data into GFEBS ECC via interfaces.',
       questionType: 'text',
       answers: ['True', 'False'],
       correctAnswer: '1',
       answerSelectionType: 'single',
     },
 
-    // ** Uncomment questions below to put them back in **
-
-    // {
-    //   question:
-    //     "What benefits does GFEBS bring to the Army's reporting practices?",
-    //   answers: [
-    //     'Real-time data',
-    //     'On Demand Reports',
-    //     'Customizable reports',
-    //     'All of the above',
-    //   ],
-    //   questionType: 'text',
-    //   correctAnswer: '4',
-    // },
-    // {
-    //   question:
-    //     'With ___________, financial managers can view up-to-date, accurate financial information about the Army at any point in time.',
-    //   answers: [
-    //     'Trial Balance',
-    //     'Customization',
-    //     'Real-time data',
-    //     'All of the above',
-    //   ],
-    //   correctAnswer: '3',
-    //   questionType: 'text',
-    // },
-    // {
-    //   question: "GFEBS produces the Army's financial statements.",
-    //   answers: ['True', 'False'],
-    //   correctAnswer: '2',
-    //   questionType: 'text',
-    // },
-    // {
-    //   question:
-    //     "What data does GFEBS send to DDRS so that DDRS can produce the Army's financial statements?",
-    //   answers: [
-    //     'Real-time data',
-    //     'Customizable reports',
-    //     'Trial Balance',
-    //     'All of the above',
-    //   ],
-    //   correctAnswer: '3',
-    //   questionType: 'text',
-    // },
+    {
+      question:
+        'What program automatically searches for unmatched disbursements and collections?',
+      answers: [
+        'Auto-Disbursement Matching Program',
+        'Auto-Disbursement & Collection Matching Program',
+        'Auto Matching Program',
+        'Auto-Recycle Program',
+      ],
+      correctAnswer: '4',
+      questionType: 'text',
+    },
+    {
+      question:
+        "What system does GFEBS ECC send 1081 custom table information to?",
+      answers: [
+        'Defense Cash Accountability System',
+        'Defense Departmental Reporting System',
+        'Audit Control Language System',
+        'Business Intelligence System',
+      ],
+      correctAnswer: '1',
+      questionType: 'text',
+    },
+    
   ],
 };
