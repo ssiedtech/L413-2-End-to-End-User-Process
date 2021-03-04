@@ -1,22 +1,31 @@
 import React, { useRef, useState, useEffect, useContext } from "react";
+import { Image } from "react-bootstrap";
 import { Slide } from "react-slideshow-image";
 import { AppContext } from "../../context/AppContext";
 import Quiz from "react-quiz-component";
 import { quiz } from "../Quiz/Quiz";
+import Terms from "../TermsComponent/TermsComponent.js";
 import endtoend from "../../img/endtoend.jpg";
-import objectives from "../../img/objectives.png";
-import TermsComponent from "../TermsComponent/TermsComponent.js";
+import objectives from "../../img/Objectives.png";
 import RFD1 from "../../img/RecordFinancialData.jpg";
 import RFD2 from "../../img/RFD 2.jpg";
-import RFD3 from "../../img/RFD 2.jpg";
-import RFD4 from "../../img/RFD 2.jpg";
+import RFD3 from "../../img/RFD 3.jpg";
+import RFD4 from "../../img/RFD 4.jpg";
 import Checkpoint from "../../img/module_checkpoint.png";
 import Shield from "../../img/shield.png";
+import ReconcileFinancialData from "../../img/ReconcileFinancialData.jpg";
+import ReconcileFinancialData1 from "../../img/ReconcileFinancialData1.jpg";
+import ReconcileFinancialData2 from "../../img/ReconcileFinancialData2.jpg";
+import ConsumeFinancialData from "../../img/ConsumeFinancialData.jpg";
+import ConsumeFinancialDataE from "../../img/CFD-E.jpg";
+import ConsumeFinancialData1 from "../../img/ConsumeFinancialData1.jpg";
 
 function Slides() {
   // State management
   const slideRef = useRef();
   const context = useContext(AppContext);
+
+  const [lineItem, setLineItem] = useState(RFD2);
 
   const [key, setKey] = useState();
 
@@ -132,7 +141,7 @@ function Slides() {
                 </span>
               </div>
               <div className="col">
-                <img src={endtoend} alt="image"></img>
+                <Image fluid className="mt-5 py-5" src={endtoend} alt="" />
               </div>
             </div>
           </div>
@@ -148,15 +157,16 @@ function Slides() {
                 </ul>
               </div>
               <div className="col">
-                <img src={objectives} alt=""></img>
+                <Image fluid className="mt-2 py-3" src={objectives} alt="" />
               </div>
             </div>
           </div>
-          <div className="row p-3 m-1">
+          <div className="row p-3 m-3">
             <div className="col">
               <div className="slide">
                 <h3 className="slide-title">Key Terms</h3>
-                <TermsComponent />
+                <br />
+                <Terms />
               </div>
             </div>
           </div>
@@ -175,12 +185,11 @@ function Slides() {
                   </p>
                 </div>
                 <div>
-                  <img className="slide-image" src={RFD1} alt="image"></img>
+                  <Image fluid className="slide-image" src={RFD1} alt="" />
                 </div>
               </div>
             </div>
           </div>
-
           <div className="slide">
             <div className="row p-3 m-1">
               <div className="col">
@@ -190,9 +199,26 @@ function Slides() {
                     Listed below are some of the systems that interface with
                     GFEBS ECC:
                   </p>
-                  <img src="" alt="image"></img>
-                  <br />
-                  <img src="" alt="image"></img>
+                  <div>
+                    <button
+                      className="show-image-button"
+                      onClick={(e) => setLineItem(RFD2)}
+                    >
+                      <span>G/L Account Line Item Report </span>
+                    </button>
+                    <button
+                      className="show-image-button"
+                      onClick={(e) => setLineItem(RFD3)}
+                    >
+                      <span>Vendor Line Item Report</span>
+                    </button>
+                    <Image
+                      fluid
+                      className="slide-image"
+                      src={lineItem}
+                      alt="Line Item Reports"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -210,7 +236,12 @@ function Slides() {
                     following table lists various financial/ accounting
                     transactions made directly in GFEBS ECC:
                   </p>
-                  <img src="" alt="image"></img>
+                  <Image
+                    fluid
+                    className="slide-image"
+                    src={RFD4}
+                    alt="Line Item Reports"
+                  />
                 </div>
               </div>
             </div>
@@ -256,17 +287,32 @@ function Slides() {
                   </p>
                   <p>
                     The following table lists GFEBS business processes that
-                    employ the reconciliation procedure:
+                    employ the reconciliation procedure and the steps in the
+                    GFEBS reconciliation process with DCAS for payroll:
                   </p>
-                  <img src="" alt="image"></img>
                 </div>
               </div>
               <div className="col">
-                <p>
-                  The following illustrates the steps in the GFEBS
-                  reconciliation process with DCAS for payroll:
-                </p>
-                <img src="" alt="image"></img>
+                <div className="flex-column">
+                  <button
+                    className="show-image-button"
+                    onClick={(e) => setLineItem(ReconcileFinancialData)}
+                  >
+                    <span>GFEBS Business Processes</span>
+                  </button>
+                  <button
+                    className="show-image-button"
+                    onClick={(e) => setLineItem(ReconcileFinancialData2)}
+                  >
+                    <span>GFEBS reconciliation process</span>
+                  </button>
+                  <Image
+                    fluid
+                    className="slide-image"
+                    src={lineItem}
+                    alt="Line Item Reports"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -415,7 +461,12 @@ function Slides() {
                 </div>
               </div>
               <div className="col">
-                <img src="" alt="image"></img>
+                <Image
+                  fluid
+                  className="mt-5 py-5"
+                  src={ConsumeFinancialData1}
+                  alt=""
+                />
               </div>
             </div>
           </div>
@@ -441,7 +492,14 @@ function Slides() {
                   </ul>
                 </div>
               </div>
-              <div className="col">IMAGE</div>
+              <div className="col">
+                <Image
+                  fluid
+                  className="mt-5 py-5"
+                  src={ConsumeFinancialData}
+                  alt=""
+                />
+              </div>
             </div>
           </div>
 
@@ -464,7 +522,14 @@ function Slides() {
                   </ul>
                 </div>
               </div>
-              <div className="col">IMAGE</div>
+              <div className="col">
+                <Image
+                  fluid
+                  className="mt-5 py-5"
+                  src={ConsumeFinancialDataE}
+                  alt=""
+                />
+              </div>
             </div>
           </div>
 
@@ -488,14 +553,14 @@ function Slides() {
                       relation to a GFEBS BI report although the transaction was
                       created in GFEBS BI.
                     </li>
-                  </ul>
-                  <p>
-                    This custom transaction in GFEBS BI starts a series of other
-                    custom programs in GFEBS ECC which perform the following 2
-                    tasks:
-                  </p>
-                  <ul>
+
                     <li>
+                      This custom transaction in GFEBS BI starts a series of
+                      other custom programs in GFEBS ECC which perform the
+                      following 2 tasks:
+                    </li>
+                        <ul>
+                        <li>
                       Gather relevant GFEBS financial data from GFEBS ECC tables
                       (primarily the SFIS totals table).
                     </li>
@@ -504,10 +569,12 @@ function Slides() {
                       related fields in accordance with the SFIS requirements
                       for reporting.
                     </li>
+                        </ul>
+                 
                   </ul>
                 </div>
               </div>
-              <div className="col">
+             <div>
                 <h4>To ACL:</h4>
                 <ul>
                   <li>
@@ -520,9 +587,10 @@ function Slides() {
                     sends the data to ACL.
                   </li>
                 </ul>
+                </div>
               </div>
             </div>
-          </div>
+       
           <div className="slide">
             <div className="row p-3 m-1">
               <div className="col">
@@ -535,7 +603,7 @@ function Slides() {
                 </div>
               </div>
               <div className="col">
-                <img src={Checkpoint}/>
+                <img src={Checkpoint} />
               </div>
             </div>
           </div>
@@ -557,7 +625,6 @@ function Slides() {
               </div>
             </div>
           </div>
-
           <div className="slide">
             <div className="row p-3 m-1">
               <div className="col">
@@ -575,9 +642,12 @@ function Slides() {
                     <li>Explain how to reconcile financial data</li>
                     <li>Identify how financial data is consumed</li>
                   </ul>
+                  <p>You may exit this module by clicking the <strong>Exit</strong> button.</p>
                 </div>
               </div>
-              <div className="col"><img src={Shield}/></div>
+              <div className="col">
+              <Image fluid className="mt-5 py-3 ml-3" src={Shield} alt="" />
+              </div>
             </div>
           </div>
         </Slide>
