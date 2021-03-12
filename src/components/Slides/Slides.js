@@ -24,9 +24,7 @@ function Slides() {
   // State management
   const slideRef = useRef();
   const context = useContext(AppContext);
-
   const [lineItem, setLineItem] = useState(RFD2);
-
   const [key, setKey] = useState();
 
   // Calculates and sets progress bar percentage after every slide change
@@ -45,7 +43,10 @@ function Slides() {
     }
 
     // Removes next arrow on final slide
-    if (context.currentSlide === context.total) {
+    if (
+      context.currentSlide === context.total ||
+      context.currentSlide === context.total - 1
+    ) {
       document.querySelector(
         "#root > div > div.mx-auto.my-auto > div > div > div.next-arrow.nav"
       ).style.display = "none";
@@ -69,6 +70,12 @@ function Slides() {
   // Resets Quiz key to random number and rerenders it... there's probably a better way to do this.
   function retakeQuiz() {
     return setKey(Math.random());
+  }
+
+  function continueQuiz() {
+    document.querySelector(
+      "#root > div > div.mx-auto.my-auto > div > div > div.next-arrow.nav"
+    ).style.display = "block";
   }
 
   // React-Slideshow package settings
@@ -96,20 +103,25 @@ function Slides() {
     },
   };
 
-  // Sets post-quiz state
-  const onCompleteAction = (obj) => {
-    document.querySelector(".next-arrow").style.display = "block";
-    context.onQuizCompletion();
-  };
+  // // Sets post-quiz state
+  // const onCompleteAction = (obj) => {
+  //   document.querySelector(".next-arrow").style.display = "block";
+  //   context.onQuizCompletion();
+  // };
 
   // Renders custom results page
   const renderCustomResultPage = (obj) => {
     return (
       <div>
         <h4>Well done, you may now continue with the lesson.</h4>
-        <button onClick={retakeQuiz} className="btn btn-primary">
-          Retake
-        </button>
+        <div className="flex-row">
+          <button onClick={retakeQuiz} className="btn btn-primary">
+            Retake
+          </button>
+          <button onClick={continueQuiz} className="btn btn-primary">
+            Continue
+          </button>
+        </div>
       </div>
     );
   };
@@ -559,22 +571,21 @@ function Slides() {
                       other custom programs in GFEBS ECC which perform the
                       following 2 tasks:
                     </li>
-                        <ul>
-                        <li>
-                      Gather relevant GFEBS financial data from GFEBS ECC tables
-                      (primarily the SFIS totals table).
-                    </li>
-                    <li>
-                      Aggregate or summarize the gathered data along the SFIS
-                      related fields in accordance with the SFIS requirements
-                      for reporting.
-                    </li>
-                        </ul>
-                 
+                    <ul>
+                      <li>
+                        Gather relevant GFEBS financial data from GFEBS ECC
+                        tables (primarily the SFIS totals table).
+                      </li>
+                      <li>
+                        Aggregate or summarize the gathered data along the SFIS
+                        related fields in accordance with the SFIS requirements
+                        for reporting.
+                      </li>
+                    </ul>
                   </ul>
                 </div>
               </div>
-             <div>
+              <div>
                 <h4>To ACL:</h4>
                 <ul>
                   <li>
@@ -587,10 +598,10 @@ function Slides() {
                     sends the data to ACL.
                   </li>
                 </ul>
-                </div>
               </div>
             </div>
-       
+          </div>
+
           <div className="slide">
             <div className="row p-3 m-1">
               <div className="col">
@@ -618,7 +629,6 @@ function Slides() {
                     key={key}
                     continueTillCorrect={true}
                     showDefaultResult={false}
-                    onComplete={onCompleteAction}
                     customResultPage={renderCustomResultPage}
                   />
                 </div>
@@ -642,11 +652,14 @@ function Slides() {
                     <li>Explain how to reconcile financial data</li>
                     <li>Identify how financial data is consumed</li>
                   </ul>
-                  <p>You may exit this module by clicking the <strong>Exit</strong> button.</p>
+                  <p>
+                    You may exit this module by clicking the{" "}
+                    <strong>Exit</strong> button.
+                  </p>
                 </div>
               </div>
               <div className="col">
-              <Image fluid className="mt-5 py-3 ml-3" src={Shield} alt="" />
+                <Image fluid className="mt-5 py-3 ml-3" src={Shield} alt="" />
               </div>
             </div>
           </div>
