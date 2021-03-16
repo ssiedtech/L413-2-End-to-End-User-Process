@@ -19,6 +19,7 @@ import ReconcileFinancialData2 from "../../img/ReconcileFinancialData2.jpg";
 import ConsumeFinancialData from "../../img/ConsumeFinancialData.jpg";
 import ConsumeFinancialDataE from "../../img/CFD-E.jpg";
 import ConsumeFinancialData1 from "../../img/ConsumeFinancialData1.jpg";
+import { render } from "@testing-library/react";
 
 function Slides() {
   // State management
@@ -127,6 +128,24 @@ function Slides() {
     );
   };
 
+  // Get the modal
+  var modal = document.getElementById("myModal");
+  var showing = false;
+  // Get the image and insert it inside the modal - use its "alt" text as a caption
+  var img = document.getElementById("myImg");
+  var modalImg = document.getElementById("img1");
+  var span = document.getElementsByClassName("myClose")[0];
+  //Hide the modal
+  function closeModal() {
+    modal.style.display = "none";
+  }
+  //Show the modal
+  function doStuff() {
+    modal.style.display = "block";
+    console.log((showing = !showing));
+    modalImg.src = img.src;
+  }
+
   return (
     <>
       <div
@@ -138,6 +157,14 @@ function Slides() {
           backgroundColor: "#f4f4f4",
         }}
       >
+        <div id="myModal" className="modalStyle">
+          <span onClick={closeModal} class="myClose">
+            &times;
+          </span>
+          <img id="img1" class="myModal-content" />
+          <div id="myCaption"></div>
+        </div>
+
         <Slide ref={slideRef} easing="ease" {...properties}>
           <div className="slide">
             <div className="row p-3 m-1">
@@ -154,7 +181,7 @@ function Slides() {
                 </span>
               </div>
               <div className="col">
-                <Image fluid className="mt-5 py-5" src={endtoend} alt="" />
+                <Image fluid src={endtoend} className="slide-image" />
               </div>
             </div>
           </div>
@@ -315,9 +342,13 @@ function Slides() {
                   >
                     <span>GFEBS reconciliation process</span>
                   </button>
+                  <p>Click Image to Enlarge</p>
                 </div>
+
                 <div>
                   <Image
+                    id="myImg"
+                    onClick={doStuff}
                     fluid
                     className="slide-image"
                     src={lineItem}

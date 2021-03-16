@@ -25,17 +25,24 @@
 }
 
 .slide-image {
-  max-height: 300px;
+  max-height: 330px;
   margin-top: 0.5rem;
   padding: 0.5rem;
-  border: 1px solid black;
+  display: block;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.slide-image:hover {
+  cursor: pointer;
 }
 
 .show-image-button {
   border: none;
   border-radius: 0px;
   padding: 0.5rem;
-  width: 250px;
+  width: 300px;
   margin: 0.5rem;
   -webkit-box-shadow: 0px 2px 4px rgba(95, 95, 95, 0.5);
   box-shadow: 0px 2px 4px rgba(95, 95, 95, 0.5);
@@ -228,6 +235,107 @@ button.close {
 
 .p-1[style] {
   padding: 0.5rem !important;
+}
+
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#myImg:hover {
+  border: solid 1px black;
+}
+
+/* The Modal (background) */
+.modalStyle {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.9);
+  /* Black w/ opacity */
+}
+
+.myModal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+.myModal-content,
+#myCaption {
+  -webkit-animation-name: zoom;
+  animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes zoom {
+  from {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+.myClose {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.myClose:hover,
+.myClose:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#myCaption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
 }
 
 /*!
