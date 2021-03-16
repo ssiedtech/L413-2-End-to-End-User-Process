@@ -83,6 +83,7 @@ function Slides() {
     indicators: false,
     arrows: true,
     autoplay: false,
+    canSwipe: false,
     defaultIndex: 0,
     transitionDuration: 300,
     prevArrow: (
@@ -286,25 +287,21 @@ function Slides() {
 
           <div className="slide">
             <div className="row p-3 m-1">
-              <div className="col">
-                <div>
-                  <h3 className="slide-title">
-                    Reconcile Financial Data 1 of 4
-                  </h3>
-                  <p>
-                    For certain business processes, after recording the
-                    financial data into GFEBS ECC from external systems, a
-                    reconciliation process/ procedure is initialized using tools
-                    available in both ECC and BI.
-                  </p>
-                  <p>
-                    The following table lists GFEBS business processes that
-                    employ the reconciliation procedure and the steps in the
-                    GFEBS reconciliation process with DCAS for payroll:
-                  </p>
-                </div>
+              <div>
+                <h3 className="slide-title">Reconcile Financial Data 1 of 4</h3>
+                <p>
+                  For certain business processes, after recording the financial
+                  data into GFEBS ECC from external systems, a reconciliation
+                  process/ procedure is initialized using tools available in
+                  both ECC and BI.
+                </p>
+                <p>
+                  The following table lists GFEBS business processes that employ
+                  the reconciliation procedure and the steps in the GFEBS
+                  reconciliation process with DCAS for payroll:
+                </p>
               </div>
-              <div className="col">
+              <div className="flex-row">
                 <div className="flex-column">
                   <button
                     className="show-image-button"
@@ -318,6 +315,8 @@ function Slides() {
                   >
                     <span>GFEBS reconciliation process</span>
                   </button>
+                </div>
+                <div>
                   <Image
                     fluid
                     className="slide-image"
@@ -623,7 +622,6 @@ function Slides() {
             <div className="row p-1 m-1">
               <div className="col">
                 <div>
-                  <h3 className="slide-title">Quiz</h3>
                   <Quiz
                     quiz={quiz}
                     key={key}
