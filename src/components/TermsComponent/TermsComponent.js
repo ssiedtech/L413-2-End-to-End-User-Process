@@ -2,18 +2,12 @@ import React, { useState } from "react";
 import "./Terms.css";
 
 const terms = [
-  [
-    "GL",
-    "General Ledger; contains the source transaction and balances required to generate financial reports.",
-  ],
+  ["GL", "General Ledger; contains the source transaction and balances required to generate financial reports."],
   [
     "SFIS",
     "Standard Financial Information Structure; A defined structure for accounting data that provides common categorization of Department of Defense programs, assets, and liabilities.",
   ],
-  [
-    "ACL",
-    "Audit Control Language; Company that provides software of the same name addressing audit, compliance",
-  ],
+  ["ACL", "Audit Control Language; Company that provides software of the same name addressing audit, compliance"],
 ];
 
 const Terms = () => {
@@ -48,11 +42,7 @@ const Terms = () => {
       </div>
       <div className="terms-container-column">
         {terms.map((text, i) => (
-          <button
-            className="terms-button"
-            key={i}
-            onClick={() => handleClick(i)}
-          >
+          <button className="btn btn-primary m-1" style={{ width: "200px" }} key={i} onClick={() => handleClick(i)}>
             {terms[i][0]}
           </button>
         ))}

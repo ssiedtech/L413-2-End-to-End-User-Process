@@ -432,7 +432,7 @@ function Slides() {
                 </div>
               </div>
               <div className="col">
-                <Image fluid className="slide-image mt-5 py-5" src={ConsumeFinancialData} alt="consumerfinancialdata" />
+                <Image fluid className="slide-image mt-1 py-1" src={ConsumeFinancialData} alt="consumerfinancialdata" />
               </div>
             </div>
           </div>
@@ -453,13 +453,7 @@ function Slides() {
                 </div>
               </div>
               <div className="col">
-                <Image
-                  fluid
-                  onClick={enlargeImage}
-                  className="slide-image mt-5 py-5"
-                  src={ConsumeFinancialDataE}
-                  alt=""
-                />
+                <Image fluid onClick={enlargeImage} className="slide-image mt-5" src={ConsumeFinancialDataE} alt="" />
               </div>
             </div>
           </div>

@@ -10,18 +10,19 @@
 
 .terms-container-column {
   display: flex;
+  justify-content: center;
   flex-direction: column;
   width: 50%;
+  height: 400px;
 }
 
 .definition-container {
   width: 80%;
-  background: linear-gradient(90deg, rgb(11, 49, 58) 0%, rgb(11, 49, 58) 100%);
-  color: white;
+  background-color: white;
   border-radius: 2px;
   padding: 1rem;
   font-size: 1.3rem;
-  box-shadow: 3px 4px 4px rgba(34, 34, 34, 0.4);
+  border: solid 1px black;
 }
 
 .terms-button {
